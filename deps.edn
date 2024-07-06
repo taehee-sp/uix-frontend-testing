@@ -1,8 +1,12 @@
 {:deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.clojure/clojurescript {:mvn/version "1.11.60"}
         com.pitch/uix.core {:mvn/version "1.0.1"}
-        com.pitch/uix.dom {:mvn/version "1.0.1"}}
+        com.pitch/uix.dom {:mvn/version "1.0.1"}
+        metosin/reitit {:mvn/version "0.7.0-alpha5"}
+        metosin/reitit-frontend {:mvn/version "0.7.0-alpha5"}
+        funcool/promesa {:mvn/version "11.0.678"}}
  :paths ["src"]
  :aliases {:dev {:extra-paths ["dev"]
                  :extra-deps {thheller/shadow-cljs {:mvn/version "2.25.8"}
-                              binaryage/devtools {:mvn/version "1.0.7"}}}}}
+                              binaryage/devtools {:mvn/version "1.0.7"}
+                              no.cjohansen/portfolio {:mvn/version "2023.12.07"}}}}}

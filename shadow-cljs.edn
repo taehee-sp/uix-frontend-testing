@@ -1,7 +1,15 @@
 {:deps true
  :dev-http {8080 "public"}
- :builds {:app
-          {:target :browser
-           :modules {:main {:entries [app.core]
-                            :init-fn app.core/init}}
-           :devtools {:preloads [preload devtools.preload]}}}}
+ :builds {:app   {:target :browser
+                  :modules {:main {:entries [app.core]
+                                   :init-fn app.core/init}}
+                  :devtools {:preloads [preload devtools.preload]}}
+          :test  {:target             :esm
+                  :output-dir         "target/test/js"
+                  :js-options {;; don't bundle any npm libs
+                               :js-provider :import}
+                  :compiler-options {:infer-externs :auto}
+                  :runtime :node
+                  :modules            {:main {:init-fn test.smply.main/init}}
+                  :portfolio/enabled? false}}
+ }

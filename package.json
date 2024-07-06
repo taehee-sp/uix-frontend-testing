@@ -1,17 +1,30 @@
 {
   "name": "uix-starter",
+  "type": "module",
   "scripts": {
-    "dev": "shadow-cljs -A:dev watch app & yarn styles-dev",
-    "release": "shadow-cljs -A:dev release app && yarn styles-release",
+    "dev": "shadow-cljs -A:dev watch app & pnpm run styles-dev",
+    "release": "shadow-cljs -A:dev release app && pnpm run styles-release",
     "styles-dev": "onchange -o '> public/main.css && lightningcss --bundle public/main.css -o public/main.css' -i src/**/*.css -- cat src/**/*.css",
     "styles-release": "cat src/**/*.css > public/main.css && lightningcss --minify --bundle public/main.css -o public/main.css"
   },
   "devDependencies": {
-    "lightningcss-cli": "^1.19.0",
+    "@testing-library/dom": "^10.3.1",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/browser": "^1.6.0",
+    "accname": "^1.1.0",
+    "lightningcss-cli": "^1.15.1",
     "onchange": "^7.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-refresh": "^0.14.0",
-    "shadow-cljs": "2.22.9"
+    "playwright": "^1.45.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-refresh": "^0.14.2",
+    "shadow-cljs": "2.28.10",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "scheduler": "^0.23.2"
   }
 }
