@@ -15,19 +15,16 @@
 
       (have-text-content?
        (query "listitem" #"")
-        ["Notion2024년 6월 27일 결제"
-         "Asana2024년 6월 20일 결제"
-         "GitHub2024년 6월 15일 결제"
-         "Zoom"
-         "Slack"] )
-      
+       ["Notion2024년 6월 27일 결제"
+        "Asana2024년 6월 20일 결제"
+        "GitHub2024년 6월 15일 결제"
+        "Zoom"
+        "Slack"])
+
       (click! (query "radio" "결제 내역 있는 SaaS 3"))
 
       (have-text-content?
        (query "listitem" #"")
        ["Notion2024년 6월 27일 결제"
         "Asana2024년 6월 20일 결제"
-        "GitHub2024년 6월 15일 결제"])
-      
-      ))
-)
+        "GitHub2024년 6월 15일 결제"]))))

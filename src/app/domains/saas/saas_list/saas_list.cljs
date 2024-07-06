@@ -3,13 +3,13 @@
             [uix.core :refer [$ defui use-state]]))
 
 (defui SaasList [{:keys [saas-list]}]
-(let [[selected set-selected!] (use-state "all")
-      saas-with-payment-list (filter :last-paid-at saas-list)
-      result-list (->> (if (= selected "all")
-                         saas-list
-                         saas-with-payment-list)
-                       (sort-by :last-paid-at)
-                       (reverse))]
+  (let [[selected set-selected!] (use-state "all")
+        saas-with-payment-list (filter :last-paid-at saas-list)
+        result-list (->> (if (= selected "all")
+                           saas-list
+                           saas-with-payment-list)
+                         (sort-by :last-paid-at)
+                         (reverse))]
     ($ :div {}
        ($ :fieldset {}
           ($ :legend {} "필터")
@@ -24,8 +24,7 @@
              ($ :input {:type "radio"
                         :value "with-payment"
                         :checked (= selected "with-payment")
-                        :on-change #(set-selected! "with-payment")}))
-         )
+                        :on-change #(set-selected! "with-payment")})))
        ($ :ul {}
           (for [saas result-list]
             ($ SaasListItem {:key (:id saas)
