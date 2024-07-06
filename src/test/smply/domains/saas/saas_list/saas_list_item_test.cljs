@@ -5,7 +5,7 @@
 
 
 (describe
- "saas-list-item"
+ "SaasListItem"
  (it "이름만 있는 SaaS"
      (run-siheom
       (render (get saas-list-item-stories "name-only-saas"))

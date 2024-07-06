@@ -6,7 +6,7 @@
 
 
 (describe
- "saas-list"
+ "SaasList"
  (it "이름만 있는 SaaS"
      (run-siheom
       (render (get saas-list-stories "여러 개인 경우"))
