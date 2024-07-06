@@ -1,5 +1,5 @@
 (ns app.domains.saas.saas-list.saas-list-item-stories 
-  (:require [app.domains.saas.saas-list.saas-list-item :refer [saas-list-item]]
+  (:require [app.domains.saas.saas-list.saas-list-item :refer [SaasListItem]]
             [uix.core :refer [$]]))
 
 (def logo-payment-info-saas
@@ -23,7 +23,7 @@
    :name "Zoom"})
 
 (def saas-list-item-stories
-  {"logo-payment-info-saas" ($ saas-list-item {:saas logo-payment-info-saas})
-   "no-payment-info-saas" ($ saas-list-item {:saas no-payment-info-saas})
-   "no-logo-saas" ($ saas-list-item {:saas no-logo-saas})
-   "name-only-saas" ($ saas-list-item {:saas name-only-saas})})
+  {"logo-payment-info-saas" ($ SaasListItem {:saas logo-payment-info-saas})
+   "no-payment-info-saas" ($ SaasListItem {:saas no-payment-info-saas})
+   "no-logo-saas" ($ SaasListItem {:saas no-logo-saas})
+   "name-only-saas" ($ SaasListItem {:saas name-only-saas})})

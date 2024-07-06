@@ -7,7 +7,7 @@
         day (.getDate date)]
     (str year "년 " month "월 " day "일")))
 
-(defui saas-list-item [{:keys [saas]}]
+(defui SaasListItem [{:keys [saas]}]
   ($ :li {}
      ($ :h3 {} (:name saas))
      (when (:last-paid-at saas)
